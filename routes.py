@@ -21,6 +21,9 @@ async def getAllInvoices() -> Dict[str, Any]:
 @invoice_router.post("/")
 async def createInvoice(text_file: UploadFile = File(...)):
     try:
+        if not text_file.filename.endswith('.exrf'):
+            raise HTTPException(status_code=400, detail="Invalid file type. Only .exrf files are allowed.")
+
         contents = await text_file.read()
 
         result = read_file(contents.decode())
@@ -29,7 +32,7 @@ async def createInvoice(text_file: UploadFile = File(...)):
         result_object = Invoice(**result_dict)
         await result_object.create()
 
-        return {"message": "Invoice has been saved"}
+        return {"message": "Invoice has been saved", "new_invoice": result_object}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

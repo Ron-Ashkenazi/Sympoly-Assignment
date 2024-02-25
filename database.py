@@ -3,7 +3,9 @@ import motor.motor_asyncio
 from models import Invoice
 
 async def init_db():
-    client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017")
+    # Insert your mongoDB url here:
+    mongoDB = "mongodb://localhost:27017"
+    client = motor.motor_asyncio.AsyncIOMotorClient(mongoDB)
 
     db = client["invoice_database"]
     collection = db["invoices"]

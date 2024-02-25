@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from tasks import invoice_router
+from routes import invoice_router
 from database import init_db
 
 app=FastAPI()
