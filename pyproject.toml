@@ -11,6 +11,7 @@ fastapi = "^0.110.0"
 uvicorn = "^0.27.1"
 beanie = "^1.25.0"
 iso4217 = "^1.11.20220401"
+python-multipart = "^0.0.9"
 
 
 [build-system]
