@@ -11,20 +11,23 @@ After downloading the code from github insert those lines to the terminal:
 The terminal will show that the app in running on localhost.
 
 Example: " INFO: Uvicorn running on http://127.0.0.1:8000...."
+
 Image: ![app_url](./instructions-images/‏‏appURL.PNG)
 
 ## Create mongoDB database
 
 Go to mongoDB compass and create a new local database.
 Get the database URL and insert it in database.py to the mongoDB variable.
+
 Example: "mongodb://localhost:27017"
+
+Image: ![mongo_url](instructions-images/‏‏mongoURL.PNG)
 
 ## Sending requests via Postman
 
-Create new requests with this url: "<the app url>/invoices"
+Create new requests with this url: "{the app url}/invoices"
 
 Example: "http://127.0.0.1:8000/invoices" or "localhost:8000/invoices"
-Image: ![mongo_url](instructions-images/‏‏mongoURL.PNG)
 
 Those three requests will work without any additional requirements:
 
